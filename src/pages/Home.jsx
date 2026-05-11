@@ -1,0 +1,205 @@
+import { Link } from 'react-router-dom'
+import SectionHeader from '../components/SectionHeader'
+
+/* ── Stat items shown below hero ─────────────────────────────── */
+const STATS = [
+  { value: '12+', label: 'Lab Members'       },
+  { value: '40+', label: 'Publications'      },
+  { value: '6',   label: 'Active Projects'   },
+  { value: '8',   label: 'Industry Partners' },
+]
+
+/* ── News / recent highlights ────────────────────────────────── */
+const NEWS = [
+  {
+    date: 'April 2025',
+    tag:  'Award',
+    text: 'PIANO paper receives Best Paper Honourable Mention at WWW 2025.',
+  },
+  {
+    date: 'February 2025',
+    tag:  'Grant',
+    text: 'DSA Lab awarded a 3-year SERB CRG grant for research in temporal graph analysis.',
+  },
+  {
+    date: 'December 2024',
+    tag:  'Recruitment',
+    text: 'Two new PhD students join the lab for Spring 2025 intake.',
+  },
+  {
+    date: 'October 2024',
+    tag:  'Talk',
+    text: 'Prof. Mehta delivers an invited keynote at ICDM 2024, Abu Dhabi.',
+  },
+]
+
+export default function Home() {
+  return (
+    <div className="page-enter">
+
+      {/* ══════════════════════════════════
+          HERO
+      ══════════════════════════════════ */}
+      <section className="relative h-[92vh] min-h-[540px] max-h-[840px] flex items-end overflow-hidden mt-16">
+
+        {/* Background image — replace src with your actual photo */}
+        <img
+          src="https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80"
+          alt="TODO: Replace with a photo of the lab or IIT campus"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 hero-overlay" />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 w-full">
+          <p className="font-sans text-xs uppercase tracking-[0.2em] text-gold-400 mb-4">
+            Indian Institute of Technology · Department of CSE
+          </p>
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl">
+            Data Systems &amp;<br className="hidden sm:block" />
+            Algorithms Lab
+          </h1>
+          <p className="mt-5 font-body text-lg text-white/80 max-w-xl leading-relaxed">
+            Pushing the boundaries of graph theory, network science, and AI-driven
+            algorithm design — from theory to real-world deployment.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              to="/research"
+              className="
+                px-6 py-3 bg-gold-400 text-navy-900 font-sans font-semibold text-sm rounded
+                hover:bg-gold-500 transition-colors shadow-lg
+              "
+            >
+              Explore Research
+            </Link>
+            <Link
+              to="/publications"
+              className="
+                px-6 py-3 border border-white/50 text-white font-sans font-medium text-sm rounded
+                hover:bg-white/10 transition-colors
+              "
+            >
+              View Publications
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════
+          STATS BAR
+      ══════════════════════════════════ */}
+      <section className="bg-navy-900 text-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <dl className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+            {STATS.map(({ value, label }) => (
+              <div key={label} className="text-center">
+                <dt className="font-display text-4xl font-bold text-gold-400">{value}</dt>
+                <dd className="mt-1 font-sans text-sm text-navy-300 uppercase tracking-widest">{label}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════
+          WELCOME / ABOUT
+      ══════════════════════════════════ */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid md:grid-cols-2 gap-12 items-start">
+
+        <div>
+          <SectionHeader
+            eyebrow="About the Lab"
+            title="Welcome to DSA Lab"
+            subtitle="We are an interdisciplinary research group housed within the Department of Computer Science &amp; Engineering at IIT, dedicated to advancing fundamental and applied research across algorithms, data systems, and artificial intelligence."
+          />
+          <p className="font-body text-navy-500 text-base leading-relaxed mb-5">
+            Our work spans theoretical algorithm design—complexity, combinatorics, and
+            approximation—through to large-scale systems that process streaming graph data in
+            real time. We collaborate closely with industry partners and regularly publish at
+            premier venues including SIGKDD, WWW, NeurIPS, VLDB, and ICDE.
+          </p>
+          <p className="font-body text-navy-500 text-base leading-relaxed">
+            The lab is led by <strong className="text-navy-800 font-semibold">Prof. Arun Mehta</strong>,
+            and currently hosts doctoral, master's, and undergraduate researchers who share a
+            passion for rigorous, impactful computer science.
+          </p>
+          <div className="mt-8 flex gap-4">
+            <Link to="/students" className="font-sans text-sm font-semibold text-gold-500 hover:text-gold-600 transition-colors flex items-center gap-1">
+              Meet the team →
+            </Link>
+          </div>
+        </div>
+
+        {/* Quick-links card panel */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            {
+              icon: '⬡',
+              title: 'Graph Algorithms',
+              desc:  'Scalable solutions for connectivity, centrality, and flow on massive networks.',
+              to:    '/research',
+            },
+            {
+              icon: '◈',
+              title: 'Influence Maximization',
+              desc:  'Seed-selection strategies combining combinatorial bounds with deep RL.',
+              to:    '/research',
+            },
+            {
+              icon: '▷',
+              title: 'Streaming Systems',
+              desc:  'Real-time data processing pipelines with provable approximation guarantees.',
+              to:    '/research',
+            },
+            {
+              icon: '◎',
+              title: 'Fairness in AI',
+              desc:  'Algorithmic fairness, bias auditing, and equitable ranking systems.',
+              to:    '/research',
+            },
+          ].map(({ icon, title, desc, to }) => (
+            <Link
+              key={title}
+              to={to}
+              className="card-lift bg-white rounded-lg p-5 shadow-card border border-cream-200 block"
+            >
+              <span className="text-2xl text-gold-400 font-display">{icon}</span>
+              <p className="mt-3 font-display font-semibold text-navy-800 text-base">{title}</p>
+              <p className="mt-1.5 font-body text-navy-500 text-sm leading-relaxed">{desc}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════
+          NEWS & UPDATES
+      ══════════════════════════════════ */}
+      <section className="bg-cream-100 border-y border-cream-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <SectionHeader eyebrow="What's New" title="Lab News & Updates" />
+          <ul className="divide-y divide-cream-200">
+            {NEWS.map(({ date, tag, text }) => (
+              <li key={text} className="py-5 flex flex-col sm:flex-row sm:items-start gap-3">
+                <time className="font-sans text-xs text-navy-400 uppercase tracking-wide whitespace-nowrap w-32 pt-0.5 shrink-0">
+                  {date}
+                </time>
+                <span className={`
+                  self-start shrink-0 inline-block px-2 py-0.5 rounded text-[10px] font-sans font-bold uppercase tracking-wider
+                  ${tag === 'Award'       ? 'bg-gold-400/20 text-gold-600'     : ''}
+                  ${tag === 'Grant'       ? 'bg-navy-100 text-navy-600'        : ''}
+                  ${tag === 'Recruitment' ? 'bg-green-100 text-green-700'      : ''}
+                  ${tag === 'Talk'        ? 'bg-indigo-100 text-indigo-700'    : ''}
+                `}>{tag}</span>
+                <p className="font-body text-navy-700 text-base leading-relaxed">{text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+    </div>
+  )
+}
