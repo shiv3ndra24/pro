@@ -15,7 +15,7 @@ const FACULTY = [
 
 const PHD = [
   {
-    name:    'Priya khanna',
+    name:    'MAAAAAAAAA ka BHOsra AAAAAAAAAAAAAAAAAAAAAAAAAAAG',
     role:    'Ph.D. Scholar — 3rd Year',
     degree:  'B.Tech., NIT Trichy',
     focus:   'Temporal graph streaming and incremental shortest-path algorithms.',
