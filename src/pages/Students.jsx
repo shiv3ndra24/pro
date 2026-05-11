@@ -15,20 +15,12 @@ const FACULTY = [
 
 const PHD = [
   {
-    name:    'Priya Nair',
+    name:    'Priya khanna',
     role:    'Ph.D. Scholar — 3rd Year',
     degree:  'B.Tech., NIT Trichy',
     focus:   'Temporal graph streaming and incremental shortest-path algorithms.',
     initials:'PN',
     color:   'bg-indigo-700',
-  },
-  {
-    name:    'Sameer Kulkarni',
-    role:    'Ph.D. Scholar — 2nd Year',
-    degree:  'M.Tech., IIT Bombay',
-    focus:   'Deep reinforcement learning for combinatorial optimisation on graphs.',
-    initials:'SK',
-    color:   'bg-teal-700',
   },
   {
     name:    'Divya Sharma',
