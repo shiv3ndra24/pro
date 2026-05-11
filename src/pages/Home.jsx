@@ -44,7 +44,8 @@ export default function Home() {
 
         {/* Background image — replace src with your actual photo */}
         <img
-          {/* src="https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80" */}
+          {/* src="https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80"  */}
+          src="https://www.clipartmax.com/png/small/14-149014_flower-images-small-size.png"
           alt="TODO: Replace with a photo of the lab or IIT campus"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
