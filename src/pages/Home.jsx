@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import SectionHeader from '../components/SectionHeader'
+import heroImage from '../assets/hero.png'
 
 /* ── Stat items shown below hero ─────────────────────────────── */
 const STATS = [
@@ -44,7 +45,7 @@ export default function Home() {
 
         {/* Background image — replace src with your actual photo */}
         <img
-          src="https://www.clipartmax.com/png/small/14-149014_flower-images-small-size.png"
+          src={heroImage}
           alt="TODO: Replace with a photo of the lab or IIT campus"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -55,15 +56,14 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 w-full">
           <p className="font-sans text-xs uppercase tracking-[0.2em] text-gold-400 mb-4">
-            Indian Institute of Technology · Department of CSE
+            Indian Institute of Technology · CAS
           </p>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl">
-            Data Systems &amp;<br className="hidden sm:block" />
-            Algorithms Lab
+            Centre for Atmospheric <br className="hidden sm:block" />
+            Sciences Lab
           </h1>
           <p className="mt-5 font-body text-lg text-white/80 max-w-xl leading-relaxed">
-            Pushing the boundaries of graph theory, network science, and AI-driven
-            algorithm design — from theory to real-world deployment.
+            Focused on teaching and interdisciplinary research on problems relating to the atmosphere, ocean, climate change, and air pollution.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
@@ -112,8 +112,8 @@ export default function Home() {
         <div>
           <SectionHeader
             eyebrow="About the Lab"
-            title="Welcome to DSA Lab"
-            subtitle="We are an interdisciplinary research group housed within the Department of Computer Science &amp; Engineering at IIT, dedicated to advancing fundamental and applied research across algorithms, data systems, and artificial intelligence."
+            title="Welcome to CAS Lab"
+            subtitle="The Centre for Atmospheric Sciences is focused on teaching and interdisciplinary research on problems relating to the atmosphere, ocean, climate change, and air pollution. Established more than forty years ago, the Centre has addressed problems of national importance. The Centre contributes to India and the world through its excellence in scientific and technical education and research. It also serves as a valuable resource for industry and society. Its main mission is to create new knowledge by generating cutting-edge research and to uphold academic growth by offering state-of-the-art undergraduate, post-graduate and doctoral programs."
           />
           <p className="font-body text-navy-500 text-base leading-relaxed mb-5">
             Our work spans theoretical algorithm design—complexity, combinatorics, and
@@ -122,9 +122,9 @@ export default function Home() {
             premier venues including SIGKDD, WWW, NeurIPS, VLDB, and ICDE.
           </p>
           <p className="font-body text-navy-500 text-base leading-relaxed">
-            The lab is led by <strong className="text-navy-800 font-semibold">Prof. Arun Mehta</strong>,
+            The lab is led by <strong className="text-navy-800 font-semibold">Prof. Yama Dixit</strong>,
             and currently hosts doctoral, master's, and undergraduate researchers who share a
-            passion for rigorous, impactful computer science.
+            passion for rigorous, impactful atmosphere science.
           </p>
           <div className="mt-8 flex gap-4">
             <Link to="/students" className="font-sans text-sm font-semibold text-gold-500 hover:text-gold-600 transition-colors flex items-center gap-1">

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import logo from "../assets/iitd_logo.png"
 
 const NAV_LINKS = [
   { to: '/',             label: 'Home'         },
@@ -41,16 +42,20 @@ export default function Navbar() {
           {/* ── Logo / Lab name ── */}
           <Link to="/" className="flex items-center gap-3 group" onClick={() => setOpen(false)}>
             {/* Monogram badge */}
-            <span className="
-              w-9 h-9 flex items-center justify-center rounded
-              bg-gold-400 text-navy-900 font-display font-bold text-lg
-              group-hover:bg-gold-500 transition-colors
+            <div className="
+              w-10 h-10 rounded overflow-hidden
+              bg-white/10
+              flex items-center justify-center
             ">
-              Λ
-            </span>
-            <div className="leading-tight">
-              <p className="text-white font-display font-semibold text-base tracking-wide">DSA Lab</p>
-              <p className="text-navy-300 font-sans text-[10px] uppercase tracking-widest">IIT Research Group</p>
+              <img
+                src={logo}
+                alt="CAS Lab Logo"
+                className="w-full h-full object-cover"
+              />
+            </div>         
+           <div className="leading-tight">
+              <p className="text-white font-display font-semibold text-base tracking-wide">CAS Lab</p>
+              <p className="text-navy-300 font-sans text-[10px] uppercase tracking-widest">IITD Research Group</p>
             </div>
           </Link>
 
