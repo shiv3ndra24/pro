@@ -8,9 +8,9 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <p className="font-display text-white text-lg font-semibold mb-1">CAS Lab</p>
+            <p className="font-display text-white text-lg font-semibold mb-1">Paleoclimate Lab</p>
             <p className="font-sans text-xs uppercase tracking-widest text-navy-400 mb-3">
-              Centre for Atmospheric Sciences
+              Paleoclimate Lab
             </p>
             <p className="font-body text-sm leading-relaxed text-navy-400">
               Advancing foundational and applied research.
@@ -20,11 +20,13 @@ export default function Footer() {
           {/* Quick links */}
           <div>
             <p className="font-sans text-xs uppercase tracking-widest text-navy-400 mb-3">Navigation</p>
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-2 gap-2">
               {[
-                ['/students', 'Students'],
+                ['/team', 'Team'],
                 ['/research', 'Research'],
+                ['/facilities', 'Facilities'],
                 ['/publications', 'Publications'],
+                ['/projects', 'Projects'],
                 ['/contact', 'Contact Us'],
               ].map(([to, label]) => (
                 <li key={to}>
@@ -44,7 +46,7 @@ export default function Footer() {
             <p className="font-sans text-xs uppercase tracking-widest text-navy-400 mb-3">Contact</p>
             <address className="not-italic font-body text-sm text-navy-400 space-y-1 leading-relaxed">
               <p>4B 11, Third Floor , Block IV</p>
-              <p>Indian Institute of Technology Delhi</p>
+              <p>IIT Delhi</p>
               <p className="mt-2">
                 <a href="mailto:dsalab@iit.ac.in" className="text-gold-400 hover:underline">
                   dummy@iit.ac.in
@@ -56,7 +58,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-6 border-t border-navy-800 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="font-sans text-xs text-navy-500">
-            © {new Date().getFullYear()} CAS Lab, IIT. All rights reserved.
+            © {new Date().getFullYear()} Paleoclimate Lab, IIT. All rights reserved.
           </p>
           <p className="font-sans text-xs text-navy-600 italic">
             Built with React &amp; Tailwind CSS

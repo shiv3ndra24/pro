@@ -3,9 +3,11 @@ import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import Students from './pages/Students'
+import Team from './pages/Team'
 import Research from './pages/Research'
+import Facilities from './pages/facility'
 import Publications from './pages/Publications'
+import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 
 /* Scroll to top on every route change */
@@ -23,9 +25,11 @@ export default function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/"             element={<Home />}         />
-          <Route path="/students"     element={<Students />}     />
+          <Route path="/team"     element={<Team />}     />
           <Route path="/research"     element={<Research />}     />
+          <Route path="/facilities"     element={<Facilities />}     />
           <Route path="/publications" element={<Publications />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/contact"      element={<Contact />}      />
           {/* 404 fallback */}
           <Route path="*" element={

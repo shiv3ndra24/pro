@@ -88,12 +88,12 @@ const AREAS = [
 /* ── Page ──────────────────────────────────────────────────────── */
 export default function Research() {
   return (
-    <div className="page-enter pt-24 pb-20">
+    <div className="page-enter pt-20 pb-20">
 
       {/* Page banner */}
       <div className="bg-navy-900 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-          <p className="font-sans text-xs uppercase tracking-[0.18em] text-gold-400 mb-2">DSA Lab</p>
+          <p className="font-sans text-xs uppercase tracking-[0.18em] text-gold-400 mb-2">Paleoclimate Lab</p>
           <h1 className="font-display text-4xl sm:text-5xl font-bold">Research Areas</h1>
           <p className="mt-3 font-body text-navy-300 text-lg max-w-xl leading-relaxed">
             Six interconnected themes that span theoretical foundations and real-world

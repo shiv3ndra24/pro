@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import SectionHeader from '../components/SectionHeader'
 import heroImage from '../assets/hero.png'
+import profImage from '../assets/people/arun mehta.jpg'
 
 /* ── Stat items shown below hero ─────────────────────────────── */
 const STATS = [
@@ -20,7 +21,7 @@ const NEWS = [
   {
     date: 'February 2025',
     tag:  'Grant',
-    text: 'DSA Lab awarded a 3-year SERB CRG grant for research in temporal graph analysis.',
+  text: 'Paleoclimate Lab awarded a 3-year SERB CRG grant for research in temporal graph analysis.',
   },
   {
     date: 'December 2024',
@@ -34,6 +35,7 @@ const NEWS = [
   },
 ]
 
+
 export default function Home() {
   return (
     <div className="page-enter">
@@ -43,7 +45,7 @@ export default function Home() {
       ══════════════════════════════════ */}
       <section className="relative h-[92vh] min-h-[540px] max-h-[840px] flex items-end overflow-hidden mt-16">
 
-        {/* Background image — replace src with your actual photo */}
+        {/* Background image */}
         <img
           src={heroImage}
           alt="TODO: Replace with a photo of the lab or IIT campus"
@@ -56,11 +58,10 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 w-full">
           <p className="font-sans text-xs uppercase tracking-[0.2em] text-gold-400 mb-4">
-            Indian Institute of Technology · CAS
+            IIT Delhi · Paleoclimate Lab
           </p>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl">
-            Centre for Atmospheric <br className="hidden sm:block" />
-            Sciences Lab
+            Paleoclimate Lab <br className="hidden sm:block" />
           </h1>
           <p className="mt-5 font-body text-lg text-white/80 max-w-xl leading-relaxed">
             Focused on teaching and interdisciplinary research on problems relating to the atmosphere, ocean, climate change, and air pollution.
@@ -68,21 +69,15 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               to="/research"
-              className="
-                px-6 py-3 bg-gold-400 text-navy-900 font-sans font-semibold text-sm rounded
-                hover:bg-gold-500 transition-colors shadow-lg
-              "
+              className="px-6 py-3 bg-gold-400 text-navy-900 font-sans font-semibold text-sm rounded hover:bg-gold-500 transition-colors shadow-lg"
             >
               Explore Research
             </Link>
             <Link
-              to="/publications"
-              className="
-                px-6 py-3 border border-white/50 text-white font-sans font-medium text-sm rounded
-                hover:bg-white/10 transition-colors
-              "
+              to="/facilities"
+              className="px-6 py-3 border border-white/50 text-white font-sans font-medium text-sm rounded hover:bg-white/10 transition-colors"
             >
-              View Publications
+              Our Facilities
             </Link>
           </div>
         </div>
@@ -109,11 +104,12 @@ export default function Home() {
       ══════════════════════════════════ */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid md:grid-cols-2 gap-12 items-start">
 
+        {/* Left: about text */}
         <div>
           <SectionHeader
             eyebrow="About the Lab"
-            title="Welcome to CAS Lab"
-            subtitle="The Centre for Atmospheric Sciences is focused on teaching and interdisciplinary research on problems relating to the atmosphere, ocean, climate change, and air pollution. Established more than forty years ago, the Centre has addressed problems of national importance. The Centre contributes to India and the world through its excellence in scientific and technical education and research. It also serves as a valuable resource for industry and society. Its main mission is to create new knowledge by generating cutting-edge research and to uphold academic growth by offering state-of-the-art undergraduate, post-graduate and doctoral programs."
+            title="Welcome to Paleoclimate Lab"
+            subtitle="The Paleoclimate Lab is focused on teaching and interdisciplinary research on problems relating to the atmosphere, ocean, climate change, and air pollution. Established more than forty years ago, the Centre has addressed problems of national importance. The Centre contributes to India and the world through its excellence in scientific and technical education and research. It also serves as a valuable resource for industry and society. Its main mission is to create new knowledge by generating cutting-edge research and to uphold academic growth by offering state-of-the-art undergraduate, post-graduate and doctoral programs."
           />
           <p className="font-body text-navy-500 text-base leading-relaxed mb-5">
             Our work spans theoretical algorithm design—complexity, combinatorics, and
@@ -127,50 +123,123 @@ export default function Home() {
             passion for rigorous, impactful atmosphere science.
           </p>
           <div className="mt-8 flex gap-4">
-            <Link to="/students" className="font-sans text-sm font-semibold text-gold-500 hover:text-gold-600 transition-colors flex items-center gap-1">
+            <Link to="/team" className="font-sans text-sm font-semibold text-gold-500 hover:text-gold-600 transition-colors flex items-center gap-1">
               Meet the team →
             </Link>
           </div>
         </div>
 
-        {/* Quick-links card panel */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {[
-            {
-              icon: '⬡',
-              title: 'Graph Algorithms',
-              desc:  'Scalable solutions for connectivity, centrality, and flow on massive networks.',
-              to:    '/research',
-            },
-            {
-              icon: '◈',
-              title: 'Influence Maximization',
-              desc:  'Seed-selection strategies combining combinatorial bounds with deep RL.',
-              to:    '/research',
-            },
-            {
-              icon: '▷',
-              title: 'Streaming Systems',
-              desc:  'Real-time data processing pipelines with provable approximation guarantees.',
-              to:    '/research',
-            },
-            {
-              icon: '◎',
-              title: 'Fairness in AI',
-              desc:  'Algorithmic fairness, bias auditing, and equitable ranking systems.',
-              to:    '/research',
-            },
-          ].map(({ icon, title, desc, to }) => (
-            <Link
-              key={title}
-              to={to}
-              className="card-lift bg-white rounded-lg p-5 shadow-card border border-cream-200 block"
-            >
-              <span className="text-2xl text-gold-400 font-display">{icon}</span>
-              <p className="mt-3 font-display font-semibold text-navy-800 text-base">{title}</p>
-              <p className="mt-1.5 font-body text-navy-500 text-sm leading-relaxed">{desc}</p>
-            </Link>
-          ))}
+        {/* Right: quick-link cards + PI profile card below */}
+        <div className="flex flex-col gap-6">
+
+          {/* Quick-link cards grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              {
+                icon: '⬡',
+                title: 'Graph Algorithms',
+                desc:  'Scalable solutions for connectivity, centrality, and flow on massive networks.',
+                to:    '/research',
+              },
+              {
+                icon: '◈',
+                title: 'Influence Maximization',
+                desc:  'Seed-selection strategies combining combinatorial bounds with deep RL.',
+                to:    '/research',
+              },
+              {
+                icon: '▷',
+                title: 'Streaming Systems',
+                desc:  'Real-time data processing pipelines with provable approximation guarantees.',
+                to:    '/research',
+              },
+              {
+                icon: '◎',
+                title: 'Fairness in AI',
+                desc:  'Algorithmic fairness, bias auditing, and equitable ranking systems.',
+                to:    '/research',
+              },
+            ].map(({ icon, title, desc, to }) => (
+              <Link
+                key={title}
+                to={to}
+                className="card-lift bg-white rounded-lg p-5 shadow-card border border-cream-200 block"
+              >
+                <span className="text-2xl text-gold-400 font-display">{icon}</span>
+                <p className="mt-3 font-display font-semibold text-navy-800 text-base">{title}</p>
+                <p className="mt-1.5 font-body text-navy-500 text-sm leading-relaxed">{desc}</p>
+              </Link>
+            ))}
+          </div>
+
+          {/* ── Featured PI Card ───────────────────────────────────── */}
+          <Link
+            to="/team"
+            className="
+              card-lift group block
+              bg-white rounded-2xl shadow-card border border-cream-200
+              overflow-hidden
+            "
+          >
+
+            {/* Large image section */}
+            <div className="relative h-[340px] overflow-hidden bg-cream-100">
+              <img
+                src={profImage}
+                alt={'Prof. Yama Dixit'}
+                className="
+                  w-full h-full object-contain
+                  group-hover:scale-[1.03]
+                  transition-transform duration-500
+                "
+                onError={e => {
+                  e.currentTarget.style.display = 'none'
+                  e.currentTarget.parentElement.classList.add(
+                    'bg-indigo-700',
+                    'flex',
+                    'items-center',
+                    'justify-center'
+                  )
+
+                  const span = document.createElement('span')
+                  span.className =
+                    'text-white font-bold text-6xl select-none font-display'
+
+                  span.textContent = PI.name
+                    .split(' ')
+                    .filter(Boolean)
+                    .map(w => w[0])
+                    .slice(0, 2)
+                    .join('')
+                    .toUpperCase()
+
+                  e.currentTarget.parentElement.appendChild(span)
+                }}
+              />
+            </div>
+
+            {/* Text section */}
+            <div className="px-6 py-5 text-center">
+              <p className="
+                font-display text-2xl font-bold
+                text-navy-800
+                group-hover:text-gold-600
+                transition-colors
+              ">
+                Prof. Yama Dixit
+              </p>
+
+              <p className="
+                mt-1
+                font-sans text-xs
+                uppercase tracking-[0.22em]
+                text-gold-500 font-semibold
+              ">
+                Main Researcher
+              </p>
+            </div>
+          </Link>
+
         </div>
       </section>
 
@@ -188,10 +257,10 @@ export default function Home() {
                 </time>
                 <span className={`
                   self-start shrink-0 inline-block px-2 py-0.5 rounded text-[10px] font-sans font-bold uppercase tracking-wider
-                  ${tag === 'Award'       ? 'bg-gold-400/20 text-gold-600'     : ''}
-                  ${tag === 'Grant'       ? 'bg-navy-100 text-navy-600'        : ''}
-                  ${tag === 'Recruitment' ? 'bg-green-100 text-green-700'      : ''}
-                  ${tag === 'Talk'        ? 'bg-indigo-100 text-indigo-700'    : ''}
+                  ${tag === 'Award'       ? 'bg-gold-400/20 text-gold-600'  : ''}
+                  ${tag === 'Grant'       ? 'bg-navy-100 text-navy-600'     : ''}
+                  ${tag === 'Recruitment' ? 'bg-green-100 text-green-700'   : ''}
+                  ${tag === 'Talk'        ? 'bg-indigo-100 text-indigo-700' : ''}
                 `}>{tag}</span>
                 <p className="font-body text-navy-700 text-base leading-relaxed">{text}</p>
               </li>

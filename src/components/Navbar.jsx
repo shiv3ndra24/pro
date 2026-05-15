@@ -4,10 +4,13 @@ import logo from "../assets/iitd_logo.png"
 
 const NAV_LINKS = [
   { to: '/',             label: 'Home'         },
-  { to: '/students',     label: 'Students'     },
+  { to: '/team',     label: 'Our Team'     },
   { to: '/research',     label: 'Research'     },
+  { to: '/facilities',     label: 'Facilities'     },
   { to: '/publications', label: 'Publications' },
+  { to: '/projects', label: 'Projects' },
   { to: '/contact',      label: 'Contact Us'   },
+  
 ]
 
 export default function Navbar() {
@@ -36,31 +39,31 @@ export default function Navbar() {
           : 'bg-navy-900'}
       `}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+        <div className="flex items-center justify-between h-20">
 
           {/* ── Logo / Lab name ── */}
-          <Link to="/" className="flex items-center gap-3 group" onClick={() => setOpen(false)}>
+          <Link to="/" className="flex items-center gap-4 group" onClick={() => setOpen(false)}>
             {/* Monogram badge */}
             <div className="
-              w-10 h-10 rounded overflow-hidden
+              w-12 h-12 rounded overflow-hidden
               bg-white/10
               flex items-center justify-center
             ">
               <img
                 src={logo}
-                alt="CAS Lab Logo"
+                alt="Paleoclimate Lab Logo"
                 className="w-full h-full object-cover"
               />
             </div>         
            <div className="leading-tight">
-              <p className="text-white font-display font-semibold text-base tracking-wide">CAS Lab</p>
-              <p className="text-navy-300 font-sans text-[10px] uppercase tracking-widest">IITD Research Group</p>
+              <p className="text-white font-display font-semibold text-lg tracking-wide">Paleoclimate Lab</p>
+              <p className="text-navy-300 font-sans text-xs uppercase tracking-widest">IIT Delhi</p>
             </div>
           </Link>
 
           {/* ── Desktop nav ── */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-10">
             {NAV_LINKS.map(({ to, label }) => (
               <NavLink
                 key={to}
@@ -80,13 +83,13 @@ export default function Navbar() {
 
           {/* ── Mobile hamburger ── */}
           <button
-            className="md:hidden flex flex-col justify-center gap-[5px] w-8 h-8 focus:outline-none"
+            className="md:hidden flex flex-col justify-center gap-[6px] w-10 h-10 focus:outline-none"
             onClick={() => setOpen(o => !o)}
             aria-label="Toggle navigation"
           >
-            <span className={`block h-0.5 bg-white rounded transition-all duration-300 ${open ? 'rotate-45 translate-y-[7px]' : ''}`} />
+            <span className={`block h-0.5 bg-white rounded transition-all duration-300 ${open ? 'rotate-45 translate-y-[9px]' : ''}`} />
             <span className={`block h-0.5 bg-white rounded transition-all duration-300 ${open ? 'opacity-0'              : ''}`} />
-            <span className={`block h-0.5 bg-white rounded transition-all duration-300 ${open ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+            <span className={`block h-0.5 bg-white rounded transition-all duration-300 ${open ? '-rotate-45 -translate-y-[9px]' : ''}`} />
           </button>
         </div>
       </div>

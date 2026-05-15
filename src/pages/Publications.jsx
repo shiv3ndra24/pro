@@ -1,12 +1,13 @@
-import SectionHeader from '../components/SectionHeader'
+// ...existing code... (SectionHeader removed in favor of a dark banner)
 
 const PUBLICATIONS = [
   {
     year: '2025',
     venue: 'WWW 2025',
     title: 'PIANO: Probabilistic Influence Analysis on Dynamic Social Networks',
-    authors: 'A. Mehta, R. Sharma, S. Verma, and DSA Lab',
+  authors: 'A. Mehta, R. Sharma, S. Verma, and Paleoclimate Lab',
     tag: 'Best Paper HM',
+    link: 'www.iitd.ac.in', // replace with the actual paper URL
   },
   {
     year: '2025',
@@ -14,13 +15,15 @@ const PUBLICATIONS = [
     title: 'Streaming Graph Sparsification with Sublinear Memory Guarantees',
     authors: 'K. Rao, A. Mehta, and P. Singh',
     tag: 'Systems',
+    link: '', // replace with the actual paper URL
   },
   {
     year: '2024',
     venue: 'NeurIPS',
     title: 'FairRank: Fairness-Aware Ranking using Graph Neural Objectives',
-    authors: 'S. Gupta, A. Mehta, and DSA Lab',
+  authors: 'S. Gupta, A. Mehta, and Paleoclimate Lab',
     tag: 'AI Ethics',
+    link: '', // replace with the actual paper URL
   },
   {
     year: '2024',
@@ -28,6 +31,7 @@ const PUBLICATIONS = [
     title: 'Adaptive Seed Selection for Influence Maximization using Reinforcement Learning',
     authors: 'R. Sharma, V. Iyer, and A. Mehta',
     tag: 'Graph ML',
+    link: '', // replace with the actual paper URL
   },
   {
     year: '2023',
@@ -35,25 +39,26 @@ const PUBLICATIONS = [
     title: 'Approximate Query Processing on Dynamic Temporal Graphs',
     authors: 'A. Mehta and T. Banerjee',
     tag: 'Databases',
+    link: '', // replace with the actual paper URL
   },
 ]
 
 export default function Publications() {
   return (
-    <div className="page-enter pt-24">
+    <div className="page-enter pt-20">
 
       {/* ══════════════════════════════════
-          HERO
+          HERO (dark banner matching Team page)
       ══════════════════════════════════ */}
-      <section className="border-b border-cream-200 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <SectionHeader
-            eyebrow="Research Output"
-            title="Publications"
-            subtitle="Our research is regularly published at leading international venues across data systems, algorithms, machine learning, and network science."
-          />
+      <div className="bg-navy-900 text-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+          <p className="font-sans text-xs uppercase tracking-[0.18em] text-gold-400 mb-2">Research Output</p>
+          <h1 className="font-display text-4xl sm:text-5xl font-bold">Publications</h1>
+          <p className="mt-3 font-body text-navy-300 text-lg max-w-xl leading-relaxed">
+            Our research is regularly published at leading international venues across data systems, algorithms, machine learning, and network science.
+          </p>
         </div>
-      </section>
+      </div>
 
       {/* ══════════════════════════════════
           PUBLICATION LIST
@@ -62,17 +67,31 @@ export default function Publications() {
 
         <div className="space-y-5">
 
-          {PUBLICATIONS.map((paper, idx) => (
-            <article
+          {PUBLICATIONS.map((paper, idx) => {
+            const Card = paper.link ? 'a' : 'article'
+            const cardProps = paper.link
+              ? {
+                  href: paper.link,
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  title: `Open ${paper.title}`,
+                }
+              : {}
+
+            return (
+            <Card
               key={idx}
-              className="
+              {...cardProps}
+              className={`
                 pub-entry
                 bg-white
                 border border-cream-200
                 rounded-lg
                 p-6
                 shadow-sm
-              "
+                block
+                ${paper.link ? 'cursor-pointer transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-md' : ''}
+              `}
             >
               <div className="flex flex-wrap items-center gap-3 mb-3">
 
@@ -137,8 +156,9 @@ export default function Publications() {
                 {paper.authors}
               </p>
 
-            </article>
-          ))}
+            </Card>
+            )
+          })}
 
         </div>
 
