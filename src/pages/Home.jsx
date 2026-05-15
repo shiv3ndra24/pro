@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
 import SectionHeader from '../components/SectionHeader'
-import heroImage from '../assets/hero.png'
-import profImage from '../assets/people/arun mehta.jpg'
 
-/* ── Stat items shown below hero ─────────────────────────────── */
+import heroImage from '../assets/hero.png' /* Replace with a photo of the lab or IIT campus for the hero section background. */                   
+import profImage from '../assets/people/yama dixit.png' /* Replace with a photo of the PI for the featured card below. Ensure the filename matches exactly and is placed in the specified directory. */
+
+/* =========================
+    ── Stat items shown below hero ───────────────────────────────  Update it as per your need
+    ======================================*/
 const STATS = [
   { value: '12+', label: 'Lab Members'       },
   { value: '40+', label: 'Publications'      },
@@ -11,7 +14,9 @@ const STATS = [
   { value: '8',   label: 'Industry Partners' },
 ]
 
-/* ── News / recent highlights ────────────────────────────────── */
+/* =========================
+  ── News / recent highlights ────────────────────────────────── Update it as per your need
+  ===========================*/
 const NEWS = [
   {
     date: 'April 2025',
@@ -41,14 +46,14 @@ export default function Home() {
     <div className="page-enter">
 
       {/* ══════════════════════════════════
-          HERO
+          HERO (only edit the contents and not the code)
       ══════════════════════════════════ */}
       <section className="relative h-[92vh] min-h-[540px] max-h-[840px] flex items-end overflow-hidden mt-16">
 
         {/* Background image */}
         <img
           src={heroImage}
-          alt="TODO: Replace with a photo of the lab or IIT campus"
+          alt="photo of the lab or IIT campus"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
@@ -84,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════
-          STATS BAR
+          STATS BAR (Dont touch)
       ══════════════════════════════════ */}
       <section className="bg-navy-900 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -100,7 +105,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════
-          WELCOME / ABOUT
+          WELCOME / ABOUT (only change the text and links, not the code structure or styling)
       ══════════════════════════════════ */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid md:grid-cols-2 gap-12 items-start">
 
@@ -133,6 +138,10 @@ export default function Home() {
         <div className="flex flex-col gap-6">
 
           {/* Quick-link cards grid */}
+          {/* ==========================================
+            Please change the contents as per need 
+            ==========================================*/}
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               {
@@ -175,11 +184,7 @@ export default function Home() {
           {/* ── Featured PI Card ───────────────────────────────────── */}
           <Link
             to="/team"
-            className="
-              card-lift group block
-              bg-white rounded-2xl shadow-card border border-cream-200
-              overflow-hidden
-            "
+            className="card-lift group block bg-white rounded-2xl shadow-card border border-cream-200 overflow-hidden "
           >
 
             {/* Large image section */}
@@ -187,11 +192,7 @@ export default function Home() {
               <img
                 src={profImage}
                 alt={'Prof. Yama Dixit'}
-                className="
-                  w-full h-full object-contain
-                  group-hover:scale-[1.03]
-                  transition-transform duration-500
-                "
+                className=" w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-500 "
                 onError={e => {
                   e.currentTarget.style.display = 'none'
                   e.currentTarget.parentElement.classList.add(
@@ -205,7 +206,7 @@ export default function Home() {
                   span.className =
                     'text-white font-bold text-6xl select-none font-display'
 
-                  span.textContent = PI.name
+                  span.textContent = 'Prof. Yama Dixit'
                     .split(' ')
                     .filter(Boolean)
                     .map(w => w[0])

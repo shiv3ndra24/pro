@@ -18,6 +18,11 @@ export default function Footer() {
           </div>
 
           {/* Quick links */}
+          {/* This section contains quick navigation links to important pages on the site. 
+          Update the `to` paths and `label` text to match your site's structure. 
+          The `to` field should correspond to the route paths defined in your app. The `label` is the text shown in the footer for each link.
+          This is important to ensure your pages are accessible from the footer as well. */}
+
           <div>
             <p className="font-sans text-xs uppercase tracking-widest text-navy-400 mb-3">Navigation</p>
             <ul className="grid grid-cols-2 gap-2">
@@ -42,6 +47,7 @@ export default function Footer() {
           </div>
 
           {/* Contact snippet */}
+          {/* This section contains the lab's contact information. Update the address, email, and any other details to reflect your lab's actual contact info. */}
           <div>
             <p className="font-sans text-xs uppercase tracking-widest text-navy-400 mb-3">Contact</p>
             <address className="not-italic font-body text-sm text-navy-400 space-y-1 leading-relaxed">
@@ -58,7 +64,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-6 border-t border-navy-800 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="font-sans text-xs text-navy-500">
-            © {new Date().getFullYear()} Paleoclimate Lab, IIT. All rights reserved.
+            © {new Date().getFullYear()} Paleoclimate Lab, IIT Delhi. All rights reserved.
           </p>
           <p className="font-sans text-xs text-navy-600 italic">
             Built with React &amp; Tailwind CSS

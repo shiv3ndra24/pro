@@ -1,7 +1,9 @@
 import SectionHeader from '../components/SectionHeader'
 import { Link } from 'react-router-dom'
 
-/* ── Data ──────────────────────────────────────────────────────── */
+/* ── Data ──────────────────────────────────────────────────────── 
+    Update and edit the data accordingly as per your needs 
+     ──────────────────────────────────────────────────────── */
 const AREAS = [
   {
     id:      '01',
@@ -86,6 +88,7 @@ const AREAS = [
 ]
 
 /* ── Page ──────────────────────────────────────────────────────── */
+/* Only edit the display text and content, nothing else */
 export default function Research() {
   return (
     <div className="page-enter pt-20 pb-20">

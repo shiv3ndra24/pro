@@ -37,6 +37,11 @@ export default {
         body:    ['"Lora"', 'Georgia', 'serif'],
         sans:    ['"DM Sans"', 'sans-serif'],
       },
+      // fontFamily: {
+      //   display: ['"Montserrat"', 'sans-serif'],
+      //   body:    ['"Roboto"', 'sans-serif'],
+      //   sans:    ['"Roboto"', 'sans-serif'],
+      // },
       boxShadow: {
         'card': '0 2px 12px 0 rgba(28,28,46,0.07)',
         'card-hover': '0 8px 32px 0 rgba(28,28,46,0.13)',

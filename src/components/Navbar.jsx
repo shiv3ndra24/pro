@@ -1,6 +1,17 @@
 import { useState, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
+
+
+
+/* Import logo from assets folder */
 import logo from "../assets/iitd_logo.png"
+
+
+/* NAVIGATION LINKS
+   Update the `to` paths and `label` text to match your site's structure.
+   The `to` field should correspond to the route paths defined in your app.
+   The `label` is the text shown in the navbar for each link. This is important to ensure your pages in the top navigation bar.
+*/
 
 const NAV_LINKS = [
   { to: '/',             label: 'Home'         },
@@ -13,6 +24,11 @@ const NAV_LINKS = [
   
 ]
 
+
+
+
+/* ======================================================= */
+/* Dont change below this line unless you know what you doing. The code below implements the responsive navbar with scroll and resize effects. */
 export default function Navbar() {
   const [open,      setOpen]      = useState(false)
   const [scrolled,  setScrolled]  = useState(false)
@@ -70,7 +86,7 @@ export default function Navbar() {
                 to={to}
                 end={to === '/'}
                 className={({ isActive }) =>
-                  `nav-link font-sans text-sm font-medium tracking-wide transition-colors pb-0.5
+                  `nav-link font-sans text-lg font-medium tracking-wide transition-colors pb-0.5
                    ${isActive
                      ? 'text-gold-400 active'
                      : 'text-navy-200 hover:text-white'}`
@@ -108,7 +124,7 @@ export default function Navbar() {
               end={to === '/'}
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                `font-sans text-sm font-medium py-2.5 px-3 rounded transition-colors
+                `font-sans text-lg font-medium py-2.5 px-3 rounded transition-colors
                  ${isActive
                    ? 'text-gold-400 bg-navy-800'
                    : 'text-navy-200 hover:text-white hover:bg-navy-800'}`

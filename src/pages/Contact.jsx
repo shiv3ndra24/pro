@@ -1,3 +1,6 @@
+/* Just update the display text below */
+
+
 export default function Contact() {
   return (
     <div className="page-enter pt-20">

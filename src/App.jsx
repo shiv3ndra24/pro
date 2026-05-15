@@ -10,6 +10,8 @@ import Publications from './pages/Publications'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 
+/* Add import statements for new pages here and add corresponding <Route> entries in the <Routes> block below. */
+
 /* Scroll to top on every route change */
 function ScrollToTop() {
   const { pathname } = useLocation()

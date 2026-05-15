@@ -1,5 +1,8 @@
 /* ── Avatar colours ──────────────────────────────────────────────── */
 
+
+/* Just add new entries by copying and pasting under the same subsection and filling details */
+
 export const AVATAR_COLORS = [
   'bg-indigo-700', 'bg-rose-700', 'bg-amber-700', 'bg-green-700',
   'bg-cyan-700',   'bg-purple-700', 'bg-pink-700', 'bg-orange-700',
@@ -15,20 +18,25 @@ export const AVATAR_COLORS = [
      cv       – CV / resume URL
    ──────────────────────────────────────────────────────────────── */
 
+
+ /* if you want to add more faculty members, copy-paste the below object and fill in the details.*/  
+
 export const FACULTY = [
   {
-    name:     'Prof. Arun Mehta',
+    name:     'Prof. Yama Dixit',
     role:     'Principal Investigator',
     degree:   'Ph.D., IISc Bangalore',
     focus:    'Graph algorithms, influence maximization, algorithmic fairness.',
     email:    'dummy@iit.ac.in',
-    image:    'arun mehta.jpg',
-    link:     'https://example.com/arun-mehta',       // card click → personal page
+    image:    'yama dixit.png',
+    link:     'https://example.com/arun-mehta',       
     scholar:  'https://scholar.google.com/',
     linkedin: 'https://linkedin.com/',
     cv:       'https://example.com/cv.pdf',
   },
 ]
+
+/* if you want to add more Ph.D. scholars, copy-paste the below object and fill in the details.*/
 
 export const PHD = [
   {
@@ -38,10 +46,10 @@ export const PHD = [
     focus:    'Temporal graph streaming and incremental shortest-path algorithms.',
     email:    'dummy@iit.ac.in',
     image:    null,
-    link:     null,                                   // no personal page
-    scholar:  'https://scholar.google.com/',          // has Scholar only
-    linkedin: null,                                   // no LinkedIn
-    cv:       null,                                   // no CV
+    link:     null,                                   
+    scholar:  'https://scholar.google.com/',          
+    linkedin: null,                                   
+    cv:       null,                                   
   },
   {
     name:     'Divya Sharma',
@@ -69,6 +77,8 @@ export const PHD = [
   },
 ]
 
+/* if you want to add more M.Tech. researchers, copy-paste the below object and fill in the details.*/
+
 export const MASTERS = [
   {
     name:     'Ananya Reddy',
@@ -81,7 +91,6 @@ export const MASTERS = [
     scholar:  null,
     linkedin: null,
     cv:       null,
-    // no links → no icons, card not clickable
   },
   {
     name:     'Karthik Suresh',
@@ -96,6 +105,8 @@ export const MASTERS = [
     cv:       'https://example.com/cv.pdf',
   },
 ]
+
+/* if you want to add more undergrad students, copy-paste the below object and fill in the details.*/
 
 export const UNDERGRAD = [
   {
@@ -123,6 +134,8 @@ export const UNDERGRAD = [
     cv:       null,
   },
 ]
+
+/* if you want to add more alumni, copy-paste the below object and fill in the details.*/
 
 export const ALUMNI = [
   {

@@ -1,5 +1,10 @@
 // ...existing code... (SectionHeader removed in favor of a dark banner)
 
+// ======================== update the publications and add their https links
+// =========================================================================
+
+//remove research paper entries or copy-paste the below object and fill in the details for new publications. Make sure to add the https links for each paper to make them clickable and accessible to visitors.
+
 const PUBLICATIONS = [
   {
     year: '2025',
@@ -7,7 +12,7 @@ const PUBLICATIONS = [
     title: 'PIANO: Probabilistic Influence Analysis on Dynamic Social Networks',
   authors: 'A. Mehta, R. Sharma, S. Verma, and Paleoclimate Lab',
     tag: 'Best Paper HM',
-    link: 'www.iitd.ac.in', // replace with the actual paper URL
+    link: 'https://www.iitd.ac.in', // replace with the actual paper URL
   },
   {
     year: '2025',
@@ -59,6 +64,11 @@ export default function Publications() {
           </p>
         </div>
       </div>
+
+
+      {/* ══════════════════════════════════
+          Dont Modify anything in the below section !!!
+      ══════════════════════════════════ */}
 
       {/* ══════════════════════════════════
           PUBLICATION LIST

@@ -53,6 +53,9 @@ const FACILITIES = [
   },
 ]
 
+
+
+/* DONT TOUCH */
 /* ── Facility image card ────────────────────────────────────────── */
 function FacilityVisual({ title, image }) {
   const [imgFailed, setImgFailed] = useState(false)
@@ -112,6 +115,8 @@ function FacilityBlock({ id, title, description, image }) {
 }
 
 /* ── Page ───────────────────────────────────────────────────────── */
+/* Only update the display text below */
+
 export default function Facilities() {
   return (
   <div className="page-enter pt-20 pb-20">

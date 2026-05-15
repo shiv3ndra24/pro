@@ -1,3 +1,7 @@
+
+/* Dont modify anything in this file apart from the display content and text. For the entries goto team.js and edit the objects there. */
+
+
 import { useState } from 'react'
 import SectionHeader from '../components/SectionHeader'
 import { AVATAR_COLORS, FACULTY, PHD, MASTERS, UNDERGRAD, ALUMNI } from './team'
