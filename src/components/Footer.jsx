@@ -27,7 +27,7 @@ export default function Footer() {
             <p className="font-sans text-xs uppercase tracking-widest text-navy-400 mb-3">Navigation</p>
             <ul className="grid grid-cols-2 gap-2">
               {[
-                ['/home', 'Home'],
+                ['/', 'Home'],
                 ['/publications', 'Publications'],
                 ['/team', 'Team'],
                 ['/projects', 'Projects'],
