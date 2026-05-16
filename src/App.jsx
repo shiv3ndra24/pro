@@ -8,6 +8,7 @@ import Research from './pages/Research'
 import Facilities from './pages/facility'
 import Publications from './pages/Publications'
 import Projects from './pages/Projects'
+import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 
 /* Add import statements for new pages here and add corresponding <Route> entries in the <Routes> block below. */
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/facilities"     element={<Facilities />}     />
           <Route path="/publications" element={<Publications />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact"      element={<Contact />}      />
           {/* 404 fallback */}
           <Route path="*" element={

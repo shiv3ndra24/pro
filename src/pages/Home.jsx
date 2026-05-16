@@ -30,7 +30,7 @@ const NEWS = [
   },
   {
     date: 'December 2024',
-    tag:  'Recruitment',
+    tag:  'Conference',
     text: 'Two new PhD students join the lab for Spring 2025 intake.',
   },
   {
@@ -62,7 +62,7 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 w-full">
-          <p className="font-sans text-xs uppercase tracking-[0.2em] text-gold-400 mb-4">
+          <p className="font-sans text-base uppercase tracking-[0.2em] text-gold-400 mb-4">
             IIT Delhi · Paleoclimate Lab
           </p>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl">
@@ -258,10 +258,17 @@ export default function Home() {
                 </time>
                 <span className={`
                   self-start shrink-0 inline-block px-2 py-0.5 rounded text-[10px] font-sans font-bold uppercase tracking-wider
-                  ${tag === 'Award'       ? 'bg-gold-400/20 text-gold-600'  : ''}
-                  ${tag === 'Grant'       ? 'bg-navy-100 text-navy-600'     : ''}
-                  ${tag === 'Recruitment' ? 'bg-green-100 text-green-700'   : ''}
-                  ${tag === 'Talk'        ? 'bg-indigo-100 text-indigo-700' : ''}
+                  ${
+                    tag === 'Award'
+                      ? 'bg-gold-400/20 text-gold-600'
+                      : tag === 'Grant'
+                      ? 'bg-navy-100 text-navy-600'
+                      : tag === 'Recruitment'
+                      ? 'bg-green-100 text-green-700'
+                      : tag === 'Talk'
+                      ? 'bg-indigo-100 text-indigo-700'
+                      : 'bg-violet-100 text-gray-700'
+                  }
                 `}>{tag}</span>
                 <p className="font-body text-navy-700 text-base leading-relaxed">{text}</p>
               </li>

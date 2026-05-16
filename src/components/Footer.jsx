@@ -27,11 +27,13 @@ export default function Footer() {
             <p className="font-sans text-xs uppercase tracking-widest text-navy-400 mb-3">Navigation</p>
             <ul className="grid grid-cols-2 gap-2">
               {[
-                ['/team', 'Team'],
-                ['/research', 'Research'],
-                ['/facilities', 'Facilities'],
+                ['/home', 'Home'],
                 ['/publications', 'Publications'],
+                ['/team', 'Team'],
                 ['/projects', 'Projects'],
+                ['/research', 'Research'],
+                ['/gallery', 'Gallery'],
+                ['/facilities', 'Facilities'],
                 ['/contact', 'Contact Us'],
               ].map(([to, label]) => (
                 <li key={to}>
