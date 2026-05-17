@@ -590,6 +590,69 @@ Gallery entries are managed in `src/pages/galleryData.js`. Photos are stored in 
 
 ---
 
+### 6.8 Adding or Editing a Project Entry
+
+Project entries are managed directly inside `src/pages/Projects.jsx`. Open that file — near the top you will see the `PROJECTS` array. Each entry looks like this:
+
+```js
+{
+  id: '01',
+  title: 'Temporal Graph Stream Processing',
+  status: 'Completed',
+  summary: 'One-line summary shown on the left panel of the card.',
+  description: `
+    Longer paragraph shown on the right side of the card.
+    You can use multiple lines — just keep them inside the backticks.
+  `,
+  researchers: [
+    'Prof. Yama Dixit',
+    'Priya Nair',
+    'Rahul Joshi',
+  ],
+  photos: [
+    { file: 'my-photo.jpg', caption: 'Optional short caption' },
+  ],
+},
+```
+
+**To add a new project**, copy an existing entry, paste it at the end of the array (before the closing `]`), and fill in the details.
+
+**To remove a project**, delete its entire `{ ... },` block.
+
+---
+
+#### Adding Photos to a Project Card
+
+Each project card can display a scrollable row of photo thumbnails. Clicking any thumbnail opens a full-screen lightbox.
+
+**Step 1 — Save your image**
+
+Put the image file inside `src/assets/project-photos/`. Use a simple lowercase filename with no spaces (e.g. `stream-processing-01.jpg`).
+
+**Step 2 — Add it to the project entry**
+
+In `src/pages/Projects.jsx`, find the project you want and add to its `photos` array:
+
+```js
+photos: [
+  { file: 'stream-processing-01.jpg', caption: 'Lab session — January 2024' },
+  { file: 'stream-processing-02.jpg', caption: 'Dataset visualisation'       },
+],
+```
+
+- `file` — the filename only (not a full path). Must exactly match the file in `src/assets/project-photos/`, including capitalisation.
+- `caption` — optional short label shown under the photo in the lightbox. You can omit it: `{ file: 'photo.jpg' }`.
+
+**To show no photos** for a project, leave the array empty:
+
+```js
+photos: [],
+```
+
+The thumbnail strip is hidden automatically — nothing broken, nothing shown.
+
+> ⚠️ Photos for projects live in `src/assets/project-photos/` — a separate folder from the Gallery photos which live in `src/assets/gallery/`. Keep them in the right folder or the image will not load.
+
 ---
 
 ### 6.7 Footer
