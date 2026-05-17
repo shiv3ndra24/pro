@@ -16,7 +16,7 @@ Git is the tool that tracks and uploads your code.
    ```
    git --version
    ```
-   You should see something like `git version 2.x.x`. If you do, Git is installed correctly. ✅
+   You should see something like `git version 2.x.x`. If you do, Git is installed correctly. 
 
 ---
 
@@ -268,7 +268,8 @@ This may take a minute. It will create a folder called `node_modules` in your pr
 ---
 ### 5.5 ⚠️ Before Starting — Pull the Latest Changes
 
-Every time you sit down to work, before running the website or editing any files, always run:
+#### **Important:**
+ Every time you sit down to work, before running the website or editing any files, always run:
 
 ```bash
 git pull
@@ -302,6 +303,90 @@ git add .
 git commit -m "Describe what you changed"
 git push
 ```
+
+---
+
+# Deploying the Website with GitHub Pages
+
+Once your code is on GitHub, you can make it publicly accessible for free using GitHub Pages.
+
+---
+
+## Step 1 — Set the Base Path in `vite.config.js`
+
+Open the file `vite.config.js` in VSCode (it is in the root of your project folder, not inside `src/`).
+
+Replace its entire contents with the following, changing `/pro/` to `/your-repository-name/` — use the exact name of the GitHub repository you created in step 3.1:
+
+```js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  base: '/your-repository-name/',
+})
+```
+
+For example, if your repository is named `lab-website`, it should be:
+
+```js
+  base: '/lab-website/',
+```
+
+Save the file, then push the change to GitHub:
+
+```bash
+git add .
+git commit -m "Set base path for GitHub Pages"
+git push
+```
+
+---
+
+## Step 2 — Enable GitHub Pages in Repository Settings
+
+1. Go to your repository on **[https://github.com](https://github.com)**.
+2. Click the **Settings** tab (near the top of the repository page).
+3. In the left sidebar, click **Pages**.
+4. Under **Build and deployment**, find the **Source** dropdown and select **GitHub Actions**.
+
+
+![github pages setup guide tab](README_images/github_pages_guide.png)
+
+GitHub will now automatically build and publish your site every time you push to the `main` branch. After the first push, wait about 1–2 minutes, then visit:
+
+
+```
+https://your-username.github.io/your-repository-name/
+```
+
+> ✅ You can check the progress of the deployment under the **Actions** tab of your repository.
+
+---
+
+## Step 3 — (Optional) Use `username.github.io` as the URL Instead
+
+By default, your site will be accessible at `https://your-username.github.io/your-repository-name/`. If you would prefer the cleaner URL `https://your-username.github.io` (with no repository name in the path), follow these steps:
+
+1. **Rename your repository** to exactly `your-username.github.io` — for example, if your GitHub username is `dsalab`, the repository must be named `dsalab.github.io`.
+   - You can rename it under **Settings → General → Repository name**.
+
+2. **Update `vite.config.js`** — change the `base` field to just `/` (a single forward slash), since the site now lives at the root of the domain:
+
+   ```js
+   import { defineConfig } from 'vite'
+   import react from '@vitejs/plugin-react'
+
+   export default defineConfig({
+     plugins: [react()],
+     base: '/',
+   })
+   ```
+
+3. **Push the change** and your site will be live at `https://your-username.github.io`.
+
+> ⚠️ Each GitHub account can only have one repository of this special `username.github.io` type. If you already have one, stick with the regular repository name approach from Steps 1–2.
 
 ---
 
